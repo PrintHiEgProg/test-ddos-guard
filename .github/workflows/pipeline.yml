@@ -1,1 +1,33 @@
-éîµéŞ¹İ­´ã~=Ùş7ã´çN½ïN¹éÎ½éî¹Ñ­éşİ­ÛM´ïNùï~¼İ­ÛM´ÛM´ënöë^ë~¼ë÷İ­´å½´éŞµëŞÙÍ´éŞµï~øëöÛN]Ñ­´ÛNôïœéÎ_ïn¹ï^ùë÷ïÚÑ­´ÛM´ÛN¶ïnµéî·ëÎ¹ï}ÚÛN[ÛNë^½éíœÛNë^÷ï¹ïm´åİÑ®šéş¶ï}ÚÑ­´ÛN¶ï½éÎ¸İ­ÛM´ÛM´ïnùéî÷ÙŞŸéíÚÛNùënùéîøïéÎµï¹ï~øÑ­´ÛM´ÛMÛM´ÛM´ï~øëôï}ÚÑ­´ÛM´ÛMÛNë^ëÚÛN7ëÎ¹ë~›éşùï´ë~Ÿë¹Ñ­´ÛM´ÛM´ÛNùï~¹ï}ÚÛNµë~øëŞŸéî÷Ùş·ëÎ¹ë~›éşùï4ï­÷Ñ­´ÛM´ÛM´ÛMÛM´ÛM´Ùİ´éîµéŞ¹İ­´ç~¹ï´ïôÛNtïŞøëÎŸéíÛM´ÛM´ÛM´ï÷ë÷İ­´ë^·ï½éşï}Ÿï~¹ïùïMïNıï¼éşãNúßÛM´ÛM´ÛM´ï¾½ï¼İ­ÛM´ÛM´ÛM´ÛM´ïNıï¼éşÙŞúëöï~½éşİ­´Û½÷ÙíıÛ½ÛM´ÛM´ÛM´ÛM´Ñ­´ÛM´ÛMÛNë^ëÚÛN=éî÷ïµéÎœÛN¸ëôëë¹éî·ëŞ¹ï}ÛM´ÛM´ÛM´ïnùéíÚÛNÜÑ­´ÛM´ÛM´ÛM´ÛNôïŞøëÎŸéí´ÙŞÛNôëŞôÛN½éî÷ïµéÎœÛMÙŞùïN»ïnµë¹ÛNôëŞôÑ­´ÛM´ÛM´ÛM´ÛNôëŞôÛN½éî÷ïµéÎœÛMïm´ïn¹ï^ùëŞöëëï÷ÙîøïÎøÑ­´ÛM´ÛM´ÛM´ÛMÛM´ÛM´Ùİ´éîµéŞ¹İ­´çnùéí´ï¹ï~øï}ÛM´ÛM´ÛM´ïnùéíÚÛNÜÑ­´ÛM´ÛM´ÛM´ÛNôïŞøëÎŸéí´ÙŞÛNôïŞøë÷ïÛM´ÛM´ÛM´ÛM´Ñ­´ÛM´ÛMÛNë^ëÚÛN6ï½éÎ¸ÛNµéî¸ÛN¸ëôéÎŸïİÛM´ÛM´ÛM´ïnùéíÚÛNÜÑ­´ÛM´ÛM´ÛM´ÛN¹ë~¼éı´Ûn6ï½éÎ¸ÛN·éşïNœëøë¸ÛNºéşöÛNøë÷ïë¸éş÷ÙŞ»ïµïn¸Ûm
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Run tests
+      run: |
+        python -m pytest
+        
+    - name: Build and deploy
+      run: |
+        echo "Build completed for test-ddos-guard"
