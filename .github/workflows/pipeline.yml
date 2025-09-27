@@ -1,15 +1,38 @@
-name: CI Pipeline
-on: [push, pull_request]
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-      - name: Run tests
-        run: pytest
+<think>
+Мы
+Мы создаем файл .github/workflows/test-guard.yml с двумяй
+Мы
+Мы
+Мы включаем автус при push в main
+Мы
+МыМы используем actions/setup-py/setup-pythony@v2 для настроеки
+Мы
+Му actions/checkout для checkout
+М
+Мы
+Мы создаем ступыпе стадки:1. checkout
+   клонируем репо
+    репозитор
+    (ес
+   вет
+    2. 2.  установка зависимостей
+  (pip install)
+ 3. 3.  тесты
+ 4.  пайтестинг
+4. 5.  депой
+  ошибка
+6. 7.  ор
+ ытчет
+Мы
+Мы
+Мы используем обнованные
+М
+Мы
+М
+Мы комментарии
+М
+М
+Мы
+М
+ММ
+МММММММММММММММММММММММММММММММ
