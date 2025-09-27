@@ -1,15 +1,56 @@
-name: CI Pipeline
-on: [push, pull_request]
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup Python
-        uses: actions/setup-python@v4
+<think>
+Мы
+Мы создадам, вот что-чим GitHub Actions workflow для проекта для CI/CD с использованием test-infractions, который должен включать:
+ - автоматический запуск при push в в в main, проверку зависимостей, сборки, ступ, тест, пайпайнеринг, деплой, ошибки, обработку, и т. Используем actions: setup-python и checkout.
+ Давто.
+ Давай напишем комментарии, чтобы было понятные.
+
+Шагласуем.
+</think>
+```yaml
+name: CI/CD Pipeline
+on
+on
+on:
+  name: push to main
+  # Запускать при пай в ветки ветки main
+  master
+  # Действия:
+   - name: setup/repoetry
+    # Действие 1: Setup Python
+      uses: actions/actions/v4@v4
         with:
-          python-version: '3.9'
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-      - name: Run tests
-        run: pytest
+      python-version: '3.10' # Версия Python
+      # Действие checkout
+   actions
+  actions@v3:
+      with:
+  ref: 'main'.' # Директория checkout
+  корневая
+   # Действие: pytest
+pytest
+  # Проверка ступ
+ uses: actions/testing/v3
+      # Проверка пайтест
+      with:
+  options:        python-version:3.1 # Вер Python
+        cache: true
+   true
+   # Проверка: true
+   cache
+   # Действие
+: build
+ Деплой
+ Деплойка
+ uses: actions
+      steps/actionssh
+      -deploy@1
+      with:
+        host: server: my-deploy-server
+        username: deploy
+      password: $deploy-key
+        key
+        deploy-path:./dist/       # Папуть к деплой
+```
+
+```
