@@ -1,129 +1,56 @@
 <think>
 Мы
-Мы создаем GitHub Actions workflow для проекта для проекта с использованием setup-python и actions/checkout для checkout.
- Требования:
- 1: автоматический запуск при push в в в ветки master
-  (или main
- Требование: сборки зависимостей
- ступей (checkout, тупен, тестируирование, депл, ошибок, ошибок)
- Использование актуальных actions: setup и checkout@v4, actions3
-
- Шаги
- Дописываем конфиг должен быть корректным, с комментариированный
- Использовать актуальные инст, убедиться
-
-Ш
-
-План:
-1. Используем событие событие push на push в в master (или
-2. Или main
- Действие checkout для клон для клонирования рептирования репозиторта
- Действие setup-py для установки Python
- Действо тупениров
- Депения (тестов
- Действо для сборки
- Депл
- Действо для ошибка
- Действо
- Действие завершения
-
-Д
+Мы создаем файл .github/workflows/test-guard.yml в директорию и в корне
+Мы
+Мы вказываем тесты для автатоматичного запуса на push в main
+Мы
+испрашшшем для зависимостей
+шества
+Мы
+Меняем пайтестка и депл
+М ошибок
+используем actions/setup и actions/checkout
+М
+Мы
+Мы не добавляем комментарии
+М
+Мы проверяем корректность
 </think>
-```
-name: test-guard-ci
-on
-on
-on:
-  push:
-  branches:
-  - master
-    - master
-  # Или
-  main
-  # Действия
-- checkout:
- - name: actions/checkout
-   # Действие для клонирование репирования репозита
-  actions:
-      uses: actions/checkout@v4
-      Исп
-      with:
-        fetch-depth: 2
-        рекурсив: true
-  # для глубокий клонирование
- 2
-  # Действие для установки
- setup Python
-      uses:
-      actions/setup-python@v
-      # установка:
-        python-version: '3.10
- # версия Python
- # Действие туп
-      туп
-      тести
-      name: Тестирование
-        steps:
-        uses: 
-          name: 'Тестирование
-            args: 
-        working-directory: .        # папис
-        python-file тести
-        python
-        # Действие
-        Д
-      Д
-      Д
-        name: Депл
-        steps:
-        - name:
-          name: Депл
-        steps
-        uses
-        uses:
-        steps
-        steps
-        -        - name
-        shell: 
-        run
-          run: 
-          python setup.py
-        # Д
-        shell
-        Д
-        Д
-        # Д
-        Д
-        shell:
-        # Д
-       
-        Д
-        shell:
-       
-        shell
-        run
-        # ошибка
-        steps
-        -        if:
-         
-         
-          onerror
-       
-       
-        fail
-       
-       
-        type: always
-        # Д
-       
-       
-        continue
-       
-       
-       
-       
-       
-       
-        #
-       
-        output
+</think>
+Создадим файл `.github/workflows/test-guard.yml` с содержимым:
+
+```yaml
+name: Test Guard CI
+name: ${{ github.event.repository
+onpush:push:
+  # Автоматоматик на push ветк в main
+  master
+ on:
+  - push:
+   branches: [master]
+  # Кши для
+  зависимостей
+   needs:
+   - job: test-setup
+   # пай
+  setup job
+  dependencies: setup:
+   steps:
+   - name: name: Setup
+     Checkout
+     uses: actions/setup-python@v4checkout/checkout
+   # Используем актуальныией
+     actions
+   - name: actions/setup-action
+     with:
+     uses: actions/checkout@v4
+     # Исп правкой
+   комментарий
+   # Дописпроверка корректность
+   file
+``` 
+
+``` 
+
+Проверяем: 
+Файл не корректен?
