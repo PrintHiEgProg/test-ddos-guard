@@ -1,56 +1,15 @@
-<think>
-Мы
-Мы создаем файл .github/workflows/test-guard.yml в директорию и в корне
-Мы
-Мы вказываем тесты для автатоматичного запуса на push в main
-Мы
-испрашшшем для зависимостей
-шества
-Мы
-Меняем пайтестка и депл
-М ошибок
-используем actions/setup и actions/checkout
-М
-Мы
-Мы не добавляем комментарии
-М
-Мы проверяем корректность
-</think>
-</think>
-Создадим файл `.github/workflows/test-guard.yml` с содержимым:
-
-```yaml
-name: Test Guard CI
-name: ${{ github.event.repository
-onpush:push:
-  # Автоматоматик на push ветк в main
-  master
- on:
-  - push:
-   branches: [master]
-  # Кши для
-  зависимостей
-   needs:
-   - job: test-setup
-   # пай
-  setup job
-  dependencies: setup:
-   steps:
-   - name: name: Setup
-     Checkout
-     uses: actions/setup-python@v4checkout/checkout
-   # Используем актуальныией
-     actions
-   - name: actions/setup-action
-     with:
-     uses: actions/checkout@v4
-     # Исп правкой
-   комментарий
-   # Дописпроверка корректность
-   file
-``` 
-
-``` 
-
-Проверяем: 
-Файл не корректен?
+name: CI Pipeline
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run tests
+        run: pytest
