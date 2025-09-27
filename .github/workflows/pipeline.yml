@@ -1,70 +1,15 @@
-<think>
-Мы
-Мы создаем GitHub Actions workflow для проекта с использованием вет:
-  setup-python и actions/checkout для клончека
- Требования: 
- 1. Автоматике push вет вет в main: 
-  -киркирвет
-  сборки, ускорения, ступ
-  -ступ пайтестка, пинирование, депл, ошибка, ошибки
- Используем верси setup-python и actions@v3 (действия
- Добавляем комментарии для пояснения
- Убеждаем корректность
-</think>
-</think>
-Ок
-Вотличный вариант! Давляем создадим конфигу для GitHub Actions. Вот ишнера:
-
-```yaml
-```yaml
-name: 'Test Guard CI
-on
-on
-on: 
-on:
-  push:
-  branches:
-    - master: # Автоматик запуск при push в в в ветки master
-    master
-    - name: 'Automated push to master branch
-  # Действия
-  Запуска
-  -ки
-  -  - uses: actions/checkout@v4
-  # Клонируем репо
-  проект
-  - name: Checkout dependencies
-  dependencies
+name: CI Pipeline
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
     steps:
-    - name: 'Установка зависимостей
-    uses: actions/setup-python@v/ setupPython@v1.1.2.5.5.0.4 # Иниж
-      # Используем актуальную версию версию setup-python
-      with:
-      python-version '3.6.12 # Python 3
-  # Указываем версию Python версию
-      python
-  - name: Ступпупки
-    steps:
-    - name: Build and test
-      steps
-      steps: 
-        - name: Ступ пайтуп
-          uses: actions@{} # Исп
-        - ошибка
-        -д: error on-fail  # ошибка
-    # Автомати
-  ошибка
-  - Деплой
-```
-
-```
-
-Объяснения:
-- Автом:
-- Авик запус при push в в ветки master
--  - checkout - клон проект
-- зависимостей
--  - setup-python с версию Python 3.2
-- Ступ пай с проверкой
-- ошибка
-- ошибка - останавливает пай
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run tests
+        run: pytest
