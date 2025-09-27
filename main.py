@@ -1,4 +1,4 @@
 print("hello ddos guard team!")
-#my name egprog!
+#my name egprog
 
 
