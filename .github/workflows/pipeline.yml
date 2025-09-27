@@ -1,38 +1,129 @@
 <think>
 Мы
-Мы создаем файл .github/workflows/test-guard.yml с двумяй
-Мы
-Мы
-Мы включаем автус при push в main
-Мы
-МыМы используем actions/setup-py/setup-pythony@v2 для настроеки
-Мы
-Му actions/checkout для checkout
-М
-Мы
-Мы создаем ступыпе стадки:1. checkout
-   клонируем репо
-    репозитор
-    (ес
-   вет
-    2. 2.  установка зависимостей
-  (pip install)
- 3. 3.  тесты
- 4.  пайтестинг
-4. 5.  депой
-  ошибка
-6. 7.  ор
- ытчет
-Мы
-Мы
-Мы используем обнованные
-М
-Мы
-М
-Мы комментарии
-М
-М
-Мы
-М
-ММ
-МММММММММММММММММММММММММММММММ
+Мы создаем GitHub Actions workflow для проекта для проекта с использованием setup-python и actions/checkout для checkout.
+ Требования:
+ 1: автоматический запуск при push в в в ветки master
+  (или main
+ Требование: сборки зависимостей
+ ступей (checkout, тупен, тестируирование, депл, ошибок, ошибок)
+ Использование актуальных actions: setup и checkout@v4, actions3
+
+ Шаги
+ Дописываем конфиг должен быть корректным, с комментариированный
+ Использовать актуальные инст, убедиться
+
+Ш
+
+План:
+1. Используем событие событие push на push в в master (или
+2. Или main
+ Действие checkout для клон для клонирования рептирования репозиторта
+ Действие setup-py для установки Python
+ Действо тупениров
+ Депения (тестов
+ Действо для сборки
+ Депл
+ Действо для ошибка
+ Действо
+ Действие завершения
+
+Д
+</think>
+```
+name: test-guard-ci
+on
+on
+on:
+  push:
+  branches:
+  - master
+    - master
+  # Или
+  main
+  # Действия
+- checkout:
+ - name: actions/checkout
+   # Действие для клонирование репирования репозита
+  actions:
+      uses: actions/checkout@v4
+      Исп
+      with:
+        fetch-depth: 2
+        рекурсив: true
+  # для глубокий клонирование
+ 2
+  # Действие для установки
+ setup Python
+      uses:
+      actions/setup-python@v
+      # установка:
+        python-version: '3.10
+ # версия Python
+ # Действие туп
+      туп
+      тести
+      name: Тестирование
+        steps:
+        uses: 
+          name: 'Тестирование
+            args: 
+        working-directory: .        # папис
+        python-file тести
+        python
+        # Действие
+        Д
+      Д
+      Д
+        name: Депл
+        steps:
+        - name:
+          name: Депл
+        steps
+        uses
+        uses:
+        steps
+        steps
+        -        - name
+        shell: 
+        run
+          run: 
+          python setup.py
+        # Д
+        shell
+        Д
+        Д
+        # Д
+        Д
+        shell:
+        # Д
+       
+        Д
+        shell:
+       
+        shell
+        run
+        # ошибка
+        steps
+        -        if:
+         
+         
+          onerror
+       
+       
+        fail
+       
+       
+        type: always
+        # Д
+       
+       
+        continue
+       
+       
+       
+       
+       
+       
+        #
+       
+        output
